@@ -1,0 +1,54 @@
+//Teste de Requisições REST - Produtos
+//@baseURL = 
+@baseURL = http://localhost:4000/api
+@id = 629a325478035adf7205ba33
+@preco = 20
+###
+// GET - Lista todos os produtos
+GET {{baseURL}}/produtos
+Content-Type: application/json
+
+###
+// GET - Lista apenas um produto pelo id
+GET {{baseURL}}/produtos/id/{{id}}
+Content-Type: application/json
+
+###
+// GET - Lista apenas um produto pelo preco
+GET {{baseURL}}/produtos/preco/{{preco}}
+Content-Type: application/json
+
+###
+// POST - Inclui um novo produto
+POST {{baseURL}}/produtos
+Content-Type: application/json
+
+{
+   "nome": "Marguerita",
+   "descricao":"Massa Fina" ,
+   "preco": "40.00",
+   "tipo": "Feito com molho tomate, mussarela, queijo",
+   "tamanho": "Broto"
+}
+
+### 
+// DELETE - Apaga um produto através do id informado
+DELETE {{baseURL}}/produtos/{{id}}
+Content-Type: application/json
+
+###
+// PUT - Altera um produto pelo ID
+PUT {{baseURL}}/produtos
+Content-Type: application/json
+
+{
+   "_id": "629a325478035adf7205ba33",
+   "nome": "Portuguesa",
+   "descricao": "Massa Grossa",
+   "preco": "60.00",
+   "tipo": "Feito com ovo cozido, ervilha, tomate",
+   "tamanho": "Grande"
+}
+
+
+
